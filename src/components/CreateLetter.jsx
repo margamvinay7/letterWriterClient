@@ -37,7 +37,7 @@ const CreateLetter = ({ selectedDraft }) => {
         const userAccessToken = localStorage.getItem("userAccessToken");
 
         const response = await axios.post(
-          "http://localhost:5000/draft/getDraftDetails",
+          "https://letterwriterserver.onrender.com/draft/getDraftDetails",
           {
             fileId: selectedDraft.id,
             userAccessToken,
@@ -69,7 +69,7 @@ const CreateLetter = ({ selectedDraft }) => {
       const token = localStorage.getItem("token");
       const userAccessToken = localStorage.getItem("userAccessToken");
       await axios.post(
-        "http://localhost:5000/letter/saveLetter",
+        "https://letterwriterserver.onrender.com/letter/saveLetter",
         { title, content, userAccessToken, draftId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -86,7 +86,7 @@ const CreateLetter = ({ selectedDraft }) => {
       const token = localStorage.getItem("token");
       const userAccessToken = localStorage.getItem("userAccessToken");
       await axios.post(
-        "http://localhost:5000/draft/saveDraft",
+        "https://letterwriterserver.onrender.com/draft/saveDraft",
         { title, content, userAccessToken },
         { headers: { Authorization: `Bearer ${token}` } }
       );

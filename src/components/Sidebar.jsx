@@ -15,7 +15,7 @@ const Sidebar = ({ onFileSelect }) => {
       const userAccessToken = localStorage.getItem("userAccessToken");
 
       const response = await axios.post(
-        "http://localhost:5000/letter/getListFiles",
+        "https://letterwriterserver.onrender.com/letter/getListFiles",
         { userAccessToken },
         { headers: { Authorization: `Bearer ${token}` } }
       );

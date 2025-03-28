@@ -15,7 +15,7 @@ const DraftSidebar = ({ onDraftSelect }) => {
       const userAccessToken = localStorage.getItem("userAccessToken");
 
       const response = await axios.post(
-        "http://localhost:5000/draft/getListDrafts",
+        "https://letterwriterserver.onrender.com/draft/getListDrafts",
         { userAccessToken },
         { headers: { Authorization: `Bearer ${token}` } }
       );
