@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import ViewAndEditLetter from "../components/viewAndEditLetter";
+import ViewAndEditLetter from "../components/ViewAndEditLetter";
 
 const Letters = () => {
   const [selectedFile, setSelectedFile] = useState(null);

@@ -37,7 +37,7 @@ const ViewAndEditLetter = ({ selectedFile }) => {
         const userAccessToken = localStorage.getItem("userAccessToken");
 
         const response = await axios.post(
-          "http://localhost:5000/letter/getFileDetails",
+          "https://letterwriterserver.onrender.com/letter/getFileDetails",
           {
             fileId: selectedFile.id,
             userAccessToken,
@@ -72,11 +72,14 @@ const ViewAndEditLetter = ({ selectedFile }) => {
       const userAccessToken = localStorage.getItem("userAccessToken");
       const updatedContent = quillInstance.current.root.innerHTML;
 
-      await axios.post("http://localhost:5000/letter/updateFile", {
-        fileId,
-        content: updatedContent,
-        userAccessToken,
-      });
+      await axios.post(
+        "https://letterwriterserver.onrender.com/letter/updateFile",
+        {
+          fileId,
+          content: updatedContent,
+          userAccessToken,
+        }
+      );
 
       alert("File updated successfully!");
     } catch (error) {
